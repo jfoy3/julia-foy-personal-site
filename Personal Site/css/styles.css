@@ -1,0 +1,232 @@
+:root {
+  --color-bg: #fff;
+  --color-nav-bg: #E6E6FA;
+  --color-text: #2c3e50;
+  --color-link: rebeccapurple;
+  --color-link-hover: #4b0082;
+  --color-timeline: #4B0082;
+  --color-nav-hover: #d8bfd8;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg: #181824;
+    --color-nav-bg: #23233a;
+    --color-text: #f3f3f3;
+    --color-link: #b39ddb;
+    --color-link-hover: #e6e6fa;
+    --color-timeline: #b39ddb;
+    --color-nav-hover: #3a3a5a;
+  }
+}
+
+body {
+  font-family: 'Libre Franklin', 'Merriweather', Arial, sans-serif;
+  background: var(--color-bg);
+  color: var(--color-text);
+}
+
+/* Nav bar */
+.nav-menu {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: auto;
+  background: var(--color-nav-bg);
+  padding: 1rem 0;
+  z-index: 1000;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+.nav-menu ul {
+  display: flex;
+  flex-direction: row;
+  gap: 1.5rem;
+  width: auto;
+  align-items: center;
+  list-style: none;
+}
+.nav-item {
+  margin: 0;
+}
+.nav-item a {
+  color: var(--color-text);
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.75rem 1.25rem;
+  display: block;
+  transition: color 0.2s, background 0.2s;
+}
+.nav-item a:hover, .nav-item a:focus {
+  background: var(--color-nav-hover);
+}
+
+main {
+  padding: 1.5rem 1rem;
+  max-width: 100rem;
+  margin: 0 auto;
+  display: flex; /* Flexbox Use */
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Headshot and name */
+.image {
+  display: flex; /* Flexbox Use */
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+.headshot {
+  width: 60rem;
+  max-width: 180px;
+  height: auto;
+  border-radius: 50%;
+}
+
+section, #welcome, #contact, #education, #work-experience, #skills, #projects, #leadership-experience, #volunteer-experience {
+  margin-bottom: 2.5rem;
+  width: 100%;
+  max-width: 800px;
+}
+
+/* Timeline */
+.timeline {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+.timeline li {
+  display: flex; /* Flexbox Use */
+  align-items: flex-start;
+  margin-bottom: 1.25rem;
+}
+.timeline .date {
+  width: 5.5rem;
+  font-weight: bold;
+  color: var(--color-timeline);
+}
+.timeline li p {
+  flex: 1;
+  border-left: 2px solid #333;  
+  padding-left: 1rem;
+  margin: 0;
+}
+
+/* Contact Info */
+#contact a {
+  color: var(--color-link);
+  font-weight: 600;
+  text-decoration: underline;
+}
+#contact a:hover, #contact a:focus {
+  color: var(--color-link-hover);
+}
+/* Responsive images */
+img, .headshot {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+#skills .proficient-in,
+#skills .familiar-with {
+  display: block; 
+}
+
+.inline-logo {
+  height: 32px;
+  width: auto;
+  vertical-align: middle;
+  margin-left: 0.5em;
+}
+
+/* Tablet size*/
+@media (min-width: 600px) {
+  html {
+    font-size: 112.5%;
+  }
+
+  .nav-menu ul {
+    gap: 2.5rem;
+  }
+
+  .headshot {
+    width: 160px;
+    max-width: 220px;
+  }
+
+  main {
+    padding: 2.5rem 2rem;
+  }
+
+  .image {
+    gap: 2rem;
+  }
+}
+
+/* Desktop size */
+@media (min-width: 900px) {
+  html {
+    font-size: 100%; 
+  }
+
+  body {
+    display: grid;
+    grid-template-columns: 220px 1fr 40px; /* CSS Grid Use */
+    grid-template-rows: auto 1fr;
+    min-height: 100rem;
+  }
+
+.nav-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 220px;
+  height: 100%;
+  flex-direction: column; 
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 1rem 0 0 0;
+}
+.nav-menu ul {
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: flex-start;
+  width: 100%;
+  list-style: none;
+}
+  .nav-item a {
+    width: 100%;
+    padding: 1rem 2rem;
+    border-radius: 0;
+    text-align: left;
+    box-sizing: border-box; 
+    display: block;
+  }
+
+  main {
+    grid-column: 2 / 3;
+    padding: 1rem 0;
+    align-items: stretch;
+    max-width: 800px;
+  }
+
+  .image {
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .headshot {
+    width: 200px;
+    max-width: 250px;
+    margin-bottom: 0;
+    margin-right: 1rem;
+  }
+}
