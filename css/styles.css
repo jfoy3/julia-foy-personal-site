@@ -28,7 +28,7 @@ body {
 
 /* Nav bar */
 .nav-menu {
-  position: sticky;
+  position: sticky; /* Sticky element */
   top: 0;
   left: 0;
   width: 100vw;
@@ -37,13 +37,13 @@ body {
   padding: 1rem 0;
   z-index: 1000;
   overflow: hidden;
-  display: flex;
+  display: flex;  /* Flexbox Use */
   justify-content: center;
   align-items: center;
   flex-direction: row;
 }
 .nav-menu ul {
-  display: flex;
+  display: flex; /* Flexbox Use */
   flex-direction: row;
   gap: 1.5rem;
   width: auto;
@@ -94,6 +94,13 @@ section, #welcome, #contact, #education, #work-experience, #skills, #projects, #
   max-width: 800px;
 }
 
+#education {
+  display: flex; /* Flexbox Use */
+  align-items: center;
+  justify-content: flex-start;
+  gap: 2rem;
+}
+
 /* Timeline */
 .timeline {
   list-style: none;
@@ -117,7 +124,7 @@ section, #welcome, #contact, #education, #work-experience, #skills, #projects, #
   margin: 0;
 }
 
-/* Contact Info */
+/* Contact */
 #contact a {
   color: var(--color-link);
   font-weight: 600;
@@ -126,7 +133,7 @@ section, #welcome, #contact, #education, #work-experience, #skills, #projects, #
 #contact a:hover, #contact a:focus {
   color: var(--color-link-hover);
 }
-/* Responsive images */
+
 img, .headshot {
   max-width: 100%;
   height: auto;
@@ -176,8 +183,8 @@ img, .headshot {
   }
 
   body {
-    display: grid;
-    grid-template-columns: 220px 1fr 40px; /* CSS Grid Use */
+    display: grid; /* CSS Grid Use */
+    grid-template-columns: 220px 1fr 40px; 
     grid-template-rows: auto 1fr;
     min-height: 100rem;
   }
@@ -228,5 +235,10 @@ img, .headshot {
     max-width: 250px;
     margin-bottom: 0;
     margin-right: 1rem;
+  }
+
+  .education-image{
+  margin: 0 0 0 2rem;
+  align-self: center;
   }
 }
